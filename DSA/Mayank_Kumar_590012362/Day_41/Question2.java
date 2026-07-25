@@ -1,4 +1,4 @@
-import java.util.ArrayDeque;`
+import java.util.ArrayDeque;
 public class Question2 {
     public String printerWars(String s) {
         int n = s.length();
