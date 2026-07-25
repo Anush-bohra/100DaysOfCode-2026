@@ -2,8 +2,6 @@ package Day_39;
 
 import java.util.*;
 
-import java.util.*;
-
 public class d39question2_technical {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
