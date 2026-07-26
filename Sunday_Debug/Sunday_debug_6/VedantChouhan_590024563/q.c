@@ -6,13 +6,10 @@ int queue[SIZE], front = -1, rear = -1;
 
 void enqueue(int reviewID) {
 
-    // Queue Full
     if ((rear + 1) % SIZE == front) {
         printf("Queue Full\n");
         return;
     }
-
-    // First element
     if (front == -1)
         front = rear = 0;
     else
@@ -23,7 +20,6 @@ void enqueue(int reviewID) {
 
 int dequeue() {
 
-    // Queue Empty
     if (front == -1) {
         printf("Queue Empty\n");
         return -1;
@@ -31,7 +27,6 @@ int dequeue() {
 
     int review = queue[front];
 
-    // Last element removed
     if (front == rear)
         front = rear = -1;
     else
