@@ -2,7 +2,7 @@ package Day_38;
 
 import java.util.*;
 
-public class d37question2_technical {
+public class d38question2_technical {
 public static int[] cardTrick(int n) {
         Deque<Integer> deque = new LinkedList<>();
 
