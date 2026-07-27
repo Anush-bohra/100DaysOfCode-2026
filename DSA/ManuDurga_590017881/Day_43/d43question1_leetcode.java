@@ -43,5 +43,6 @@ public class d43question1_leetcode {
         for(int i=0;i<n2;i++){
             System.out.print(": ");
             Arr2[i]=sc.nextInt();}
-        merge(Arr1, n1, Arr2, n2);    }
+        merge(Arr1, n1, Arr2, n2);
+        sc.close();    }
 }
