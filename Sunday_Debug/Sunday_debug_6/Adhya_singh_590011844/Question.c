@@ -1,17 +1,17 @@
-```c
 #include <stdio.h>
+
 #define SIZE 5
 
-int queue[SIZE], front = -1, rear = -1;
+int queue[SIZE];
+int front = -1;
+int rear = -1;
 
 void enqueue(int reviewID) {
-    // Queue is full
     if ((rear + 1) % SIZE == front) {
         printf("Queue Full\n");
         return;
     }
 
-    // First element
     if (front == -1) {
         front = 0;
         rear = 0;
@@ -23,7 +23,6 @@ void enqueue(int reviewID) {
 }
 
 int dequeue() {
-    // Queue is empty
     if (front == -1) {
         printf("Queue Empty\n");
         return -1;
@@ -31,7 +30,6 @@ int dequeue() {
 
     int review = queue[front];
 
-    // Removing the last element
     if (front == rear) {
         front = -1;
         rear = -1;
@@ -51,11 +49,13 @@ void display() {
     printf("Pending Reviews: ");
 
     int i = front;
+
     while (1) {
         printf("%d ", queue[i]);
 
-        if (i == rear)
+        if (i == rear) {
             break;
+        }
 
         i = (i + 1) % SIZE;
     }

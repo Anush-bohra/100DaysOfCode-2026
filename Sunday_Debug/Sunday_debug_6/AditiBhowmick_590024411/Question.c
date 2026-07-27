@@ -1,20 +1,25 @@
-```c
 #include <stdio.h>
-#define SIZE 5
+#define SIZE 100
 
-int queue[SIZE], front = -1, rear = -1;
+int queue[SIZE];
+int front = -1, rear = -1;
+
+int isFull() {
+    return ((rear + 1) % SIZE == front);
+}
+
+int isEmpty() {
+    return (front == -1);
+}
 
 void enqueue(int reviewID) {
-    // Queue is full
-    if ((rear + 1) % SIZE == front) {
-        printf("Queue Full\n");
+    if (isFull()) {
+        printf("Queue Overflow\n");
         return;
     }
 
-    // First element
-    if (front == -1) {
-        front = 0;
-        rear = 0;
+    if (isEmpty()) {
+        front = rear = 0;
     } else {
         rear = (rear + 1) % SIZE;
     }
@@ -23,27 +28,23 @@ void enqueue(int reviewID) {
 }
 
 int dequeue() {
-    // Queue is empty
-    if (front == -1) {
-        printf("Queue Empty\n");
+    if (isEmpty()) {
+        printf("Queue Underflow\n");
         return -1;
     }
 
     int review = queue[front];
 
-    // Removing the last element
     if (front == rear) {
-        front = -1;
-        rear = -1;
+        front = rear = -1;
     } else {
         front = (front + 1) % SIZE;
     }
-
     return review;
 }
 
 void display() {
-    if (front == -1) {
+    if (isEmpty()) {
         printf("No pending reviews\n");
         return;
     }
@@ -56,7 +57,6 @@ void display() {
 
         if (i == rear)
             break;
-
         i = (i + 1) % SIZE;
     }
 
@@ -64,15 +64,14 @@ void display() {
 }
 
 int main() {
+    // Initial review requests
     enqueue(101);
     enqueue(102);
     enqueue(103);
+    enqueue(104);
 
     printf("Processed Review: %d\n", dequeue());
-
-    enqueue(104);
     enqueue(105);
-
     display();
 
     return 0;
