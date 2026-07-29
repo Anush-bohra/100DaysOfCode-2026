@@ -1,7 +1,6 @@
 package Day_45;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 public class d45question1_leetcode {
     public static int searchInsert(int[] nums, int target) {
