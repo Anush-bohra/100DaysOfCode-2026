@@ -1,8 +1,6 @@
 #include <stdio.h>
 #define SIZE 5
-
 int stack[SIZE], top = -1;
-
 void push(int value)
 {
     if (top == SIZE - 1)
@@ -13,7 +11,6 @@ void push(int value)
     top++;
     stack[top] = value;
 }
-
 void pop()
 {
     if (top == -1)
@@ -25,7 +22,6 @@ void pop()
     top--;
     printf("Popped: %d\n", popped);
 }
-
 void swapTop()
 {
     if (top < 1)
@@ -37,7 +33,6 @@ void swapTop()
     stack[top] = stack[top - 1];
     stack[top - 1] = temp;
 }
-
 void display()
 {
     if (top == -1)
@@ -54,7 +49,6 @@ void display()
     }
     printf("\n");
 }
-
 int main()
 {
     push(101);
