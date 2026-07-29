@@ -1,4 +1,4 @@
-<h2 align="center">Week 7 Day 3 (29/07/2026)</h2>
+<h2 align="center">Week 7 Day 45 (29/07/2026)</h2>
 
 ## 1. Search Insert Position (LeetCode #35)
 A problem that teaches binary search techniques by finding the position of a target value in a sorted array or the position where it should be inserted. Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order. You must write an algorithm with O(log n) runtime complexity.
