@@ -18,7 +18,7 @@ class Question2 {
     }
 
     public static void main(String[] args) {
-        Solution s = new Solution();
+        Question1_Leetcode s = new Question1_Leetcode();
         char[] chars = {'a','a','b','b','c','c','c'};
         int len = s.compress(chars);
         for (int i = 0; i < len; i++)

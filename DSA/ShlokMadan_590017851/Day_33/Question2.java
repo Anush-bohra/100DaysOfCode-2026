@@ -21,7 +21,7 @@ public class Question2
     }
     public static void main(String[] args) 
     {
-        Solution obj=new Solution();
+        Question1_Leetcode obj=new Question1_Leetcode();
         System.out.println(obj.postfixToPrefix("AB+CD-*"));
         System.out.println(obj.postfixToPrefix("ABC/-AK/L-*"));
     }
