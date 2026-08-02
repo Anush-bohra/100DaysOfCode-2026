@@ -1,26 +1,16 @@
 def merge(arr, left, mid, right):
     left_part = arr[left:mid + 1]
     right_part = arr[mid + 1:right + 1]
+    i = j = 0
 
-    def merge_helper(i, j, k):
-        if i < len(left_part) and j < len(right_part):
-            if left_part[i] <= right_part[j]:
-                arr[k] = left_part[i]
-                merge_helper(i + 1, j, k + 1)
-            else:
-                arr[k] = right_part[j]
-                merge_helper(i, j + 1, k + 1)
-
-        elif i < len(left_part):
+    # Iterating using range removes the forbidden while loop and avoids recursion limits
+    for k in range(left, right + 1):
+        if i < len(left_part) and (j >= len(right_part) or left_part[i] <= right_part[j]):
             arr[k] = left_part[i]
-            merge_helper(i + 1, j, k + 1)
-
-        elif j < len(right_part):
+            i += 1
+        else:
             arr[k] = right_part[j]
-            merge_helper(i, j + 1, k + 1)
-
-    merge_helper(0, 0, left)
-
+            j += 1
 
 def merge_sort(arr, left, right):
     if left < right:
@@ -33,9 +23,7 @@ def binary_search(arr, target):
     def search(low, high):
         if low > high:
             return -1
-
         mid = (low + high) // 2
-
         if arr[mid] == target:
             return mid
         elif arr[mid] < target:
@@ -45,14 +33,8 @@ def binary_search(arr, target):
 
     return search(0, len(arr) - 1)
 
-
+# Test run
 incidents = [34, 7, 23, 32, 5, 62, 15]
-
 merge_sort(incidents, 0, len(incidents) - 1)
 print("Sorted Reports:", incidents)
-
-<<<<<<< HEAD
 print("Record Found At:", binary_search(incidents, 23))
-=======
-print("Record Found At:", binary_search(incidents, 23))
->>>>>>> 8aeae6803efbccbf4cce699e37f35b58671a84af
