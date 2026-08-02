@@ -63,4 +63,4 @@ incidents = [34, 7, 23, 32, 5, 62, 15]
 merge_sort(incidents, 0, len(incidents) - 1)
 
 print("Sorted Reports:", incidents)
-print("Record Found At:", binary_search(incidents, 23))
+print("Record Found At:", binary_search(incidents, 23)) 
