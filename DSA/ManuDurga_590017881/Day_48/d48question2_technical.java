@@ -21,7 +21,7 @@ public class d48question2_technical {
     }
 public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter k: ");
+        System.out.print("Enter n: ");
         int k = sc.nextInt();
         System.out.print("Enter Size of Array: ");
         int n1 = sc.nextInt();
