@@ -23,16 +23,12 @@ int main() {
         if (nums[i] % 2 != 0) {
             continue;
         }
-
         int count = 0;
-
         for (int j = 0; j < n; j++) {
-
             if (nums[j] == nums[i]) {
                 count++;
             }
         }
-
         if (count > maxFreq) {
             maxFreq = count;
             answer = nums[i];
