@@ -16,8 +16,7 @@ struct ListNode* deleteDuplicates(struct ListNode* head) {
     curr->next=curr->next->next;
     free(temp);}
     else{
-        curr=curr->next;
-    }
+        curr=curr->next;}
    }
    return head;
 }
